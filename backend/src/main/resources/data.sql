@@ -1,6 +1,6 @@
-INSERT INTO attendee (firstName, lastName) VALUES ('Max', 'Mustermann');
-INSERT INTO attendee (firstName, lastName) VALUES ('Erika', 'Musterfrau');
-INSERT INTO attendee (firstName, lastName) VALUES ('Hans', 'Dampf');
+INSERT INTO attendee (first_name, last_name) VALUES ('Max', 'Mustermann');
+INSERT INTO attendee (first_name, last_name) VALUES ('Erika', 'Musterfrau');
+INSERT INTO attendee (first_name, last_name) VALUES ('Hans', 'Dampf');
 
 INSERT INTO instrument (name) VALUES ('Guitar');
 INSERT INTO instrument (name) VALUES ('Piano');

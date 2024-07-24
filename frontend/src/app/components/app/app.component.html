@@ -1,10 +1,36 @@
-<nav>
-  <!-- You can add a navigation bar here that will be displayed on all pages -->
-</nav>
+<div class="background vh-100 vw-100">
 
-<!-- The router outlet is where the component for the current route will be loaded -->
-<router-outlet></router-outlet>
+  <div class="banner">
+    <div class="row align-items-center">
+      <div class="col">
+        <h1 class="mb-0">Musikfabrik Yspertal</h1>
+      </div>
+      <div class="col-auto">
+        <div class="row align-items-center">
+          <h4 class="mb-0 col-auto" [class.active]="navHighlight == 2">{{ name }}</h4>
+          <i class="bi bi-person-circle fs-3 col-auto"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<footer>
-  <!-- You can add a footer here that will be displayed on all pages -->
-</footer>
+  <nav class="nav">
+      <h2 class="me-5 mb-0" [class.active]="navHighlight == 0">Projekte</h2>
+      <h2 class="me-5 mb-0" [class.active]="navHighlight == 1">Teilnehmer:innen</h2>
+  </nav>
+
+  <div class="card">
+    <div>
+      <h3> {{ subtitle }} </h3>
+      <hr class="border border-dark">
+    </div>
+
+    <!-- The router outlet is where the component for the current route will be loaded -->
+    <router-outlet></router-outlet>
+
+  </div>
+
+  <footer>
+    <!-- You can add a footer here that will be displayed on all pages -->
+  </footer>
+</div>

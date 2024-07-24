@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.background {
+  display: flex;
+  flex-direction: column;
+  background-color: #6C9A3B;
+  font-family: Urbanist, sans-serif;
+}
+
+.banner {
+  background-color: #C3833D;
+  padding: 3vh 8vh;
+  color: white;
+  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+  text-shadow: 0 6px 8px rgba(0,0,0,0.2);;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  padding: 3vh 6vh;
+  margin: 0 2vh 2vh;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  flex-grow: 1;
+}
+
+.nav {
+  color: #314F23;
+  padding: 2vh 8vh;
+  text-shadow: 0 6px 8px rgba(0,0,0,0.2);;
+}
+
+.active {
+  color: white;
+  text-decoration: underline;
+}

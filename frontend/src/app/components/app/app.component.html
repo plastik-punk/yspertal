@@ -3,10 +3,10 @@
   <div class="banner">
     <div class="row align-items-center">
       <div class="col">
-        <h1 class="mb-0 title">Musikfabrik Yspertal</h1>
+        <h1 class="mb-0 title" (click)="navigateToProjects()">Musikfabrik Yspertal</h1>
       </div>
       <div class="col-auto">
-        <div class="row align-items-center btn-profile">
+        <div class="row align-items-center btn-profile" (click)="navigateToProfile()">
           <h4 class="mb-0 col-auto" [class.active]="navHighlight == 2">{{ name }}</h4>
           <i class="bi bi-person-circle fs-3 col-auto"></i>
         </div>
@@ -15,16 +15,16 @@
   </div>
 
   <nav class="nav">
-      <h2 class="me-5 mb-0 nav-item" [class.active]="navHighlight == 0">Projekte</h2>
-      <h2 class="me-5 mb-0 nav-item" [class.active]="navHighlight == 1">Teilnehmer:innen</h2>
+    <h2 class="me-5 mb-0 nav-item" [class.active]="navHighlight == 0" (click)="navigateToProjects()">Projekte</h2>
+    <h2 class="me-5 mb-0 nav-item" [class.active]="navHighlight == 1" (click)="navigateToTN()">Teilnehmer:innen</h2>
   </nav>
 
   <div class="card">
     <div>
       <div class="row align-items-center">
-        <h3 class="col mb-0"> {{ subtitle }} </h3>
-        <button type="button" class="col-auto btn btn-primary" >
-          <h4 class="mb-0"><i class="bi bi-plus-lg"></i> Projekt</h4>
+        <h3 class="col mb-0 mt-1"> {{ subtitle }} </h3>
+        <button type="button" class="col-auto btn btn-primary" [hidden]="!projectButton">
+          <i class="bi bi-plus-lg"></i> Projekt
         </button>
       </div>
       <hr class="border border-dark">

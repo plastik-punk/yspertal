@@ -36,3 +36,43 @@
   color: white;
   text-decoration: underline;
 }
+
+.btn-primary {
+  background-color: #6C9A3B;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #C3833D;
+  border: none;
+}
+
+.btn-primary:active {
+  background-color: #C3833D !important;
+  border: none;
+}
+
+.btn-profile {
+  background-color: #C3833D;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.btn-profile:hover {
+  background-color: #6C9A3B;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nav-item:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.title:hover {
+  cursor: pointer;
+}

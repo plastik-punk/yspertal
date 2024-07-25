@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   currentRoute: string = '';
   navHighlight= 0;  // 0 = projects, 1 = tn, 2 = profile
   name = 'Jörg Zwicker';
-  subtitle = 'Übersicht';
+  subtitle = 'test';
   projectButton: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router) {
@@ -36,14 +36,18 @@ export class AppComponent implements OnInit {
       if (this.currentRoute.includes('project')) {
         this.navHighlight = 0;
         this.projectButton = true;
+      } else {
+        this.projectButton = false;
       }
-      else if (this.currentRoute.includes('tn')) {
+      if (this.currentRoute.includes('tn')) {
         this.navHighlight = 1;
-        this.projectButton = false;
       }
-      else if (this.currentRoute.includes('profile')) {
+      if (this.currentRoute.includes('profile')) {
         this.navHighlight = 2;
-        this.projectButton = false;
+        this.subtitle = 'Profil';
+      }
+      if (this.currentRoute.includes('overview')) {
+        this.subtitle = 'Übersicht';
       }
     });
   }

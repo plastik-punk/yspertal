@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink, RouterOutlet} from '@angular/router';
 import {NgIf} from "@angular/common";
+import {InstructorService} from "../../services/instructor.service";
+import {Globals} from "../../global/globals";
 
 @Component({
   selector: 'app-root',
@@ -12,59 +14,74 @@ import {NgIf} from "@angular/common";
 export class AppComponent implements OnInit {
   title = 'frontend';
   currentRoute: string = '';
-  navHighlight= 0;  // 0 = projects, 1 = tn, 2 = profile
-  name = 'Jörg Zwicker';
-  subtitle = 'test';
-  projectButton: boolean = false;
+  name = 'firstname lastname';
+  subtitle = 'subtitle';
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  project: boolean = false;
+  login: boolean = true;
+  profile: boolean = false;
+  tn: boolean = false;
+
+  constructor(private route: ActivatedRoute, private router: Router, private instructorService: InstructorService, private globals: Globals) {
   }
 
   ngOnInit() {
-    this.getCurrentName()
-    this.getCurrentPage()
-    this.getCurrentSubtitle()
-  }
-
-  getCurrentName() {
-
+    this.getCurrentPage();
   }
 
   getCurrentPage(): void {
     this.router.events.subscribe(() => {
       this.currentRoute = this.router.url;
+
+      this.name = this.globals.name;
+
       if (this.currentRoute.includes('project')) {
-        this.navHighlight = 0;
-        this.projectButton = true;
+        this.project = true;
       } else {
-        this.projectButton = false;
+        this.project = false;
       }
+
       if (this.currentRoute.includes('tn')) {
-        this.navHighlight = 1;
+        this.tn = true;
+      } else {
+        this.tn = false;
       }
+
       if (this.currentRoute.includes('profile')) {
-        this.navHighlight = 2;
         this.subtitle = 'Profil';
+        this.profile = true;
+      } else {
+        this.profile = false;
       }
+
       if (this.currentRoute.includes('overview')) {
         this.subtitle = 'Übersicht';
       }
+
+      if (this.currentRoute.includes('login')) {
+        this.subtitle = 'Login';
+        this.login = true;
+      } else {
+        this.login = false;
+      }
+
     });
   }
 
-  getCurrentSubtitle() {
-
-  }
-
   navigateToProjects() {
-    this.router.navigate(['project-overview']);
+    this.router.navigate([this.globals.id + '/project-overview']);
   }
 
   navigateToTN() {
-    this.router.navigate(['tn-overview']);
+    this.router.navigate([this.globals.id + '/tn-overview']);
   }
 
   navigateToProfile() {
-    this.router.navigate(['profile']);
+    this.router.navigate([this.globals.id + '/profile']);
+  }
+
+  navigateToLogin() {
+    this.globals.id = -1;
+    this.router.navigate(['login']);
   }
 }

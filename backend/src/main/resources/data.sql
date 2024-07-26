@@ -21,9 +21,10 @@ INSERT INTO piece_instrument (piece_id, instrument_id, amount) VALUES (2, 3, 1);
 INSERT INTO piece_instrument (piece_id, instrument_id, amount) VALUES (3, 1, 1);
 INSERT INTO piece_instrument (piece_id, instrument_id, amount) VALUES (3, 2, 1);
 
-INSERT INTO instructor (last_name) VALUES ('Auzinger');
-INSERT INTO instructor (last_name) VALUES ('Jo');
-INSERT INTO instructor (last_name) VALUES ('Länger');
+INSERT INTO instructor (first_name, last_name) VALUES ('Anna', 'Auzinger');
+INSERT INTO instructor (first_name, last_name) VALUES ('Manfred', 'Länger');
+INSERT INTO instructor (first_name, last_name) VALUES ('Arne', 'Kircher');
+INSERT INTO instructor (first_name, last_name) VALUES ('Karo', 'Stu');
 
 INSERT INTO project (instructor_id, piece_id) VALUES (1, 1);
 INSERT INTO project (instructor_id, piece_id) VALUES (2, 2);

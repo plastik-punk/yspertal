@@ -15,9 +15,24 @@ public class Instructor {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
+    @Column(nullable = false)
+    private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
 
     @OneToMany (mappedBy = "instructor")
     private List<Project> projects;
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
 }

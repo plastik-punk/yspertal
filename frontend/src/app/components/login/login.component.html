@@ -1,7 +1,11 @@
-<form (ngSubmit)="login()">
+<form (ngSubmit)="login()" class="login-form">
+
   <label for="firstName">Vorname</label>
   <input type="text" id="firstName" [(ngModel)]="instructor.firstName" name="firstName" required>
+
   <label for="lastName">Nachname</label>
   <input type="text" id="lastName" [(ngModel)]="instructor.lastName" name="lastName" required>
-  <button type="submit">Login</button>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+
 </form>

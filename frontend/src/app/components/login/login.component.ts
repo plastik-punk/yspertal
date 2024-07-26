@@ -29,7 +29,7 @@ export class LoginComponent {
       next: (data) => {
         this.globals.id = data.id;
         this.globals.name = data.firstName + ' ' + data.lastName;
-        this.router.navigate([data.id + '/profile']);
+        this.router.navigate([data.id + '/project-overview']);
       },
       error: (error) => {
         console.error(error);

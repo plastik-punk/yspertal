@@ -10,7 +10,10 @@ export class Globals {
 
   public name: string = "";
 
-  constructor() {}
+  public isAdmin: boolean = false;
+
+  constructor() {
+  }
 
   private findBackendUrl(): string {
     if (typeof window !== 'undefined') {

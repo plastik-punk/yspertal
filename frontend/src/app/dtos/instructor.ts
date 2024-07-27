@@ -1,10 +1,17 @@
 export interface InstructorDetailDto {
-    id: number;
-    firstName: string;
-    lastName: string;
+  id: number;
+  firstName: string;
+  lastName: string;
+  isAdmin: boolean;
 }
 
 export interface InstructorCreateDto {
-    firstName: string;
-    lastName: string;
+  firstName: string;
+  lastName: string;
+  isAdmin: boolean;
+}
+
+export interface InstructorLoginDto {
+  firstName: string;
+  lastName: string;
 }

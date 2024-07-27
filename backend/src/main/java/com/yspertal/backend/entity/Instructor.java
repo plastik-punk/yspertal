@@ -21,7 +21,10 @@ public class Instructor {
     @Column(nullable = false)
     private String lastName;
 
-    @OneToMany (mappedBy = "instructor")
+    @Column(nullable = false)
+    private boolean isAdmin;
+
+    @OneToMany(mappedBy = "instructor")
     private List<Project> projects;
 
     public Integer getId() {
@@ -34,5 +37,21 @@ public class Instructor {
 
     public String getLastName() {
         return this.lastName;
+    }
+
+    public boolean getIsAdmin() {
+        return this.isAdmin;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 }

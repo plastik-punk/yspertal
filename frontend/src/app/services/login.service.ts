@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Globals} from "../global/globals";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable, tap} from "rxjs";
-import {InstructorCreateDto, InstructorDetailDto} from "../dtos/instructor";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {InstructorDetailDto, InstructorLoginDto} from "../dtos/instructor";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class LoginService {
   ) {
   }
 
-  login(instructorCreateDto: InstructorCreateDto): Observable<InstructorDetailDto> {
+  login(instructorCreateDto: InstructorLoginDto): Observable<InstructorDetailDto> {
     return this.httpClient.post<InstructorDetailDto>(this.loginBaseUri, instructorCreateDto);
   }
 }

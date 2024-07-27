@@ -17,10 +17,13 @@ export class AppComponent implements OnInit {
   name = 'firstname lastname';
   subtitle = 'subtitle';
 
+  isAdmin: boolean = false;
+
   project: boolean = false;
   login: boolean = true;
   profile: boolean = false;
   tn: boolean = false;
+  instructor: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private instructorService: InstructorService, private globals: Globals) {
   }
@@ -34,6 +37,7 @@ export class AppComponent implements OnInit {
       this.currentRoute = this.router.url;
 
       this.name = this.globals.name;
+      this.isAdmin = this.globals.isAdmin;
 
       if (this.currentRoute.includes('project')) {
         this.project = true;
@@ -52,6 +56,12 @@ export class AppComponent implements OnInit {
         this.profile = true;
       } else {
         this.profile = false;
+      }
+
+      if (this.currentRoute.includes('instructor')) {
+        this.instructor = true;
+      } else {
+        this.instructor = false;
       }
 
       if (this.currentRoute.includes('overview')) {
@@ -83,5 +93,9 @@ export class AppComponent implements OnInit {
   navigateToLogin() {
     this.globals.id = -1;
     this.router.navigate(['login']);
+  }
+
+  navigateToInstructor() {
+    this.router.navigate(['instructor-overview']);
   }
 }

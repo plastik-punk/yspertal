@@ -118,3 +118,52 @@
     border-radius: 5px;
   }
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+
+  th, td {
+    padding: 12px 15px;
+  }
+
+  thead {
+    color: #314F23;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #314F23;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .form-check-input {
+    margin-top: 0.3rem;
+    margin-left: 0;
+  }
+
+  .btn-group .btn {
+    margin-right: 5px;
+  }
+}
+
+.btn-secondary {
+  background-color: #314F23;
+}
+
+.action {
+  text-align: right;
+}
+
+.btn-group {
+  display: inline-flex;
+  justify-content: flex-end;
+}

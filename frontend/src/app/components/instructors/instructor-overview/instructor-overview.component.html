@@ -1,0 +1,44 @@
+<table>
+  <thead>
+  <tr>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    <th>Admin</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let instructor of instructors">
+    <td>
+      <div>
+        <input type="text" [(ngModel)]="instructor.firstName" [disabled]="!edit">
+      </div>
+    </td>
+    <td>
+      <div>
+        <input type="text" [(ngModel)]="instructor.lastName" [disabled]="!edit">
+      </div>
+    </td>
+    <td>
+      <div>
+        <input type="checkbox" [(ngModel)]="instructor.isAdmin" [disabled]="!edit" class="ms-3">
+      </div>
+    </td>
+    <td class="action">
+      <div class="btn-group">
+        <button class="btn btn-secondary m-0">Löschen</button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+  <tr class="action">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <button class="btn btn-primary" [hidden]="edit" (click)="edit = true">Edit</button>
+      <button class="btn btn-primary" [hidden]="!edit" (click)="save()">Save</button>
+    </td>
+
+  </tr>
+</table>

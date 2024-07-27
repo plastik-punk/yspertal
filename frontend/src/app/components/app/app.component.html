@@ -20,14 +20,16 @@
   <nav class="nav" *ngIf="!login">
     <h2 class="me-5 mb-0 nav-item" [class.active]="project" (click)="navigateToProjects()">Projekte</h2>
     <h2 class="me-5 mb-0 nav-item" [class.active]="tn" (click)="navigateToTN()">Teilnehmer:innen</h2>
+    <h2 class="me-5 mb-0 nav-item" [class.active]="instructor" *ngIf="isAdmin" (click)="navigateToInstructor()">
+      Referent:innen</h2>
   </nav>
 
   <div class="card">
     <div>
       <div class="row align-items-center">
         <h3 class="col mb-0 mt-1"> {{ subtitle }} </h3>
-        <button type="button" class="col-auto btn btn-primary" [hidden]="!project">
-          <i class="bi bi-plus-lg"></i> Projekt
+        <button type="button" class="col-auto btn btn-primary" [hidden]="!project && !instructor">
+          <i class="bi bi-plus-lg"></i> Neu
         </button>
       </div>
       <hr class="border border-dark">

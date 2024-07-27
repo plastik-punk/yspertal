@@ -3,7 +3,7 @@ import {FormsModule} from "@angular/forms";
 import {Router} from "@angular/router";
 import {InstructorService} from "../../services/instructor.service";
 import {LoginService} from "../../services/login.service";
-import {InstructorCreateDto} from "../../dtos/instructor";
+import {InstructorLoginDto} from "../../dtos/instructor";
 import {Globals} from "../../global/globals";
 
 @Component({
@@ -16,7 +16,7 @@ import {Globals} from "../../global/globals";
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  instructor: InstructorCreateDto = {
+  instructor: InstructorLoginDto = {
     firstName: '',
     lastName: ''
   }
@@ -29,6 +29,7 @@ export class LoginComponent {
       next: (data) => {
         this.globals.id = data.id;
         this.globals.name = data.firstName + ' ' + data.lastName;
+        this.globals.isAdmin = data.isAdmin;
         this.router.navigate([data.id + '/project-overview']);
       },
       error: (error) => {

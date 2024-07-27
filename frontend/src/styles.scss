@@ -45,14 +45,9 @@
 }
 
 .btn-primary:hover {
-  background-color: #C3833D;
   border: none;
 }
 
-.btn-primary:active {
-  background-color: #C3833D !important;
-  border: none;
-}
 
 .btn-profile {
   background-color: #C3833D;
@@ -156,8 +151,10 @@ table {
 }
 
 .btn-secondary {
-  background-color: #314F23;
+  background-color: #C3833D;
+  border: none;
 }
+
 
 .action {
   text-align: right;
@@ -166,4 +163,16 @@ table {
 .btn-group {
   display: inline-flex;
   justify-content: flex-end;
+  gap: 0.5rem;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: #314F23;
+  color: white;
+}
+
+.btn:active {
+  background-color: #314F23 !important;
+  color: black !important;
 }

@@ -52,4 +52,8 @@ export class InstructorOverviewComponent implements OnInit {
     });
   }
 
+  newInstructor() {
+    this.router.navigate(['instructor-create']);
+  }
+
 }

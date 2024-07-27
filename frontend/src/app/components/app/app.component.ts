@@ -60,6 +60,9 @@ export class AppComponent implements OnInit {
 
       if (this.currentRoute.includes('instructor')) {
         this.instructor = true;
+        if (this.currentRoute.includes('create')) {
+          this.subtitle = 'Neue:r Referent:in';
+        }
       } else {
         this.instructor = false;
       }

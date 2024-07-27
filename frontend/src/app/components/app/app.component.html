@@ -25,16 +25,6 @@
   </nav>
 
   <div class="card">
-    <div>
-      <div class="row align-items-center">
-        <h3 class="col mb-0 mt-1"> {{ subtitle }} </h3>
-        <button type="button" class="col-auto btn btn-primary" [hidden]="!project && !instructor">
-          <i class="bi bi-plus-lg"></i> Neu
-        </button>
-      </div>
-      <hr class="border border-dark">
-    </div>
-
     <!-- The router outlet is where the component for the current route will be loaded -->
     <router-outlet></router-outlet>
 

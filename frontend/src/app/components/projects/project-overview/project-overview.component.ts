@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-project-overview',
@@ -7,6 +7,21 @@ import { Component } from '@angular/core';
   templateUrl: './project-overview.component.html',
   styleUrl: './project-overview.component.scss'
 })
-export class ProjectOverviewComponent {
+export class ProjectOverviewComponent implements OnInit {
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+  getProjects(): void {
+  }
+
+  save() {
+  }
+
+  newProject() {
+  }
 
 }

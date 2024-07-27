@@ -4,6 +4,7 @@ import {TnOverviewComponent} from "./components/attendees/tn-overview/tn-overvie
 import {LoginComponent} from "./components/login/login.component";
 import {InstructorComponent} from "./components/instructors/instructor/instructor.component";
 import {InstructorOverviewComponent} from "./components/instructors/instructor-overview/instructor-overview.component";
+import {InstructorCreateComponent} from "./components/instructors/instructor-create/instructor-create.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -11,5 +12,6 @@ export const routes: Routes = [
   {path: ':id/tn-overview', component: TnOverviewComponent},
   {path: ':id/profile', component: InstructorComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'instructor-overview', component: InstructorOverviewComponent}
+  {path: 'instructor-overview', component: InstructorOverviewComponent},
+  {path: 'instructor-create', component: InstructorCreateComponent}
 ];
